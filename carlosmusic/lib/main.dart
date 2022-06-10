@@ -1,115 +1,258 @@
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter_app1/cancionesmodell.dart';
+import 'package:carlosmusic/principals.dart';
+// import 'package:flutter_app1/reproductor.dart';
+import 'package:carlosmusic/decorationlogin.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: homepage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+// ignore: camel_case_types
+class homepage extends StatefulWidget {
+  const homepage({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<homepage> createState() => _homepagepState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+// ignore: camel_case_types
+class _homepagepState extends State<homepage> {
+  // Future<FirebaseApp> _initializeFirebase() async {
+  //   FirebaseApp firebaseApp = await Firebase.initializeApp();
+  //   return firebaseApp;
+  // }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    return const Scaffold(body: login()
+        // FutureBuilder(
+        //   future: _initializeFirebase(),
+        //   builder: (context, snapshot) {
+        //     if (snapshot.connectionState == ConnectionState.done) {
+        //       return login();
+        //     }
+        //     return const Center(
+        //       child: CircularProgressIndicator(),
+        //     );
+        //   },
+        // ),
+        );
+  }
+}
+
+// ignore: camel_case_types
+class login extends StatefulWidget {
+  const login({Key? key}) : super(key: key);
+
+  @override
+  State<login> createState() => _loginState();
+}
+
+// ignore: camel_case_types
+class _loginState extends State<login> {
+  // static Future<User?> loginUsingEmailPassword(
+  //     {required String email,
+  //     required String password,
+  //     required BuildContext context}) async {
+  //   FirebaseAuth auth = FirebaseAuth.instance;
+  //   User? user;
+  //   try {
+  //     UserCredential userCredential = await auth.signInWithEmailAndPassword(
+  //         email: email, password: password);
+  //     user = userCredential.user;
+  //   } on FirebaseAuthException catch (e) {
+  //     if (e.code == "user not found") {
+  //       print("no user found for tha email");
+  //     }
+  //   }
+
+  //   return user;
+  // }
+
+  // TextEditingController _emailController = TextEditingController();
+  // TextEditingController _passwordController = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    final Size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+      body: SizedBox(
+        width: double.infinity,
+        height: double.infinity,
+        child: Stack(
+          children: [fondoazul(Size), icono(), loginform(context)],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  SingleChildScrollView loginform(BuildContext context) {
+    // TextEditingController _emailController = TextEditingController();
+    // TextEditingController _passwordController = TextEditingController();
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const SizedBox(height: 250),
+          Container(
+            padding: const EdgeInsets.all(20),
+            margin: const EdgeInsets.symmetric(horizontal: 30),
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(23),
+              //efecto de sombra
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 15,
+                  offset: Offset(0, 5),
+                ),
+              ],
+            ),
+            child: Column(
+              children: [
+                Text(
+                  'Login',
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+                Container(
+                  child: Form(
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          //   controller: _emailController,
+                          autocorrect: false,
+                          decoration: InputDecorations.inputDecoration(
+                              hintext: "ejemplo@gmail.com",
+                              labeltext: "correo electronico",
+                              icono: const Icon(Icons.alternate_email_rounded)),
+                          validator: (value) {
+                            String pattern =
+                                r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                            RegExp regExp = new RegExp(pattern);
+                            return regExp.hasMatch(value ?? '')
+                                ? null
+                                : "el valor ingresado no es un correo";
+                          },
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        TextFormField(
+                          //    controller: _passwordController,
+                          autocorrect: false,
+                          obscureText: true,
+                          decoration: InputDecorations.inputDecoration(
+                              hintext: "*********",
+                              labeltext: "contraseña",
+                              icono: const Icon(Icons.lock_outlined)),
+                          validator: (value) {
+                            return (value != null && value.length >= 8)
+                                ? null
+                                : "la contraseña debe ser mayor o igual a 8 caracteres";
+                          },
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        MaterialButton(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          disabledColor: Colors.grey,
+                          color: Colors.blue,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 80, vertical: 15),
+                            child: const Text(
+                              "Ingresar",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                          onPressed: () async {
+                            // User? user = await loginUsingEmailPassword(
+                            //     email: _emailController.text,
+                            //     password: _passwordController.text,
+                            //     context: context);
+                            // print(user);
+                            // if (user != null) {
+                            //   Navigator.of(context).pushReplacement(
+                            //       MaterialPageRoute(
+                            //           builder: (context) => principals()));
+                            // }
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => principals()),
+                            );
+                          },
+                        )
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          const SizedBox(height: 30),
+          const Text(
+            "Registrar Cuenta",
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+    );
+  }
+
+  SafeArea icono() {
+    return SafeArea(
+      child: Container(
+        margin: const EdgeInsets.only(top: 70),
+        width: double.infinity,
+        child: const Icon(
+          Icons.audiotrack,
+          color: Colors.white,
+          size: 80,
+        ),
+      ),
+    );
+  }
+
+  Container fondoazul(Size Size) {
+    return Container(
+      color: Colors.blue,
+      width: double.infinity,
+      height: Size.height * 0.4,
+      child: Stack(
+        children: [
+          Positioned(child: burbuja(), top: 90, left: 20),
+          Positioned(child: burbuja(), top: -40, left: -30),
+          Positioned(child: burbuja(), top: -15, left: 250),
+          Positioned(child: burbuja(), top: 150, left: 290),
+          Positioned(child: burbuja(), bottom: -40, left: 120),
+        ],
+      ),
+    );
+  }
+
+  Container burbuja() {
+    return Container(
+      width: 100,
+      height: 100,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(100),
+          color: Color.fromRGBO(255, 255, 255, 0.05)),
     );
   }
 }
