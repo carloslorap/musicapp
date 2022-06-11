@@ -1,57 +1,57 @@
-class cancion {
+class electro {
   final String titulo;
   final String imagen;
   final String audio;
 
-  cancion({
+  electro({
     required this.titulo,
     required this.imagen,
     required this.audio,
   });
 }
 
-List<cancion> canciones = [
-  cancion(
+List<electro> electros = [
+  electro(
     titulo: 'MAGIG! - Rude(official video)',
     imagen: 'assets/rude.jpg',
     audio: 'rudede.mp3',
   ),
-  cancion(
+  electro(
     titulo: 'Daddy Yankee - Con Calma )',
     imagen: "assets/daddy.jpg",
     audio: 'daddy.mp3',
   ),
-  cancion(
+  electro(
     titulo: 'Bruno Mars Thats What ILike ',
     imagen: "assets/bruno.jpg",
     audio: 'brunomars.mp3',
   ),
-  cancion(
+  electro(
     titulo: "BoyWithUke'Toxic'Open Mic",
     imagen: "assets/maxx.jpg",
     audio: 'boywith.mp3',
   ),
-  cancion(
+  electro(
     titulo: ' Ozuna - DEPRIMIDA ',
     imagen: "assets/ozuna.png",
     audio: 'ozuna.mp3',
   ),
-  cancion(
+  electro(
     titulo: 'BAD BUNNY - AMORFODA ',
     imagen: "assets/badbunny.jpg",
     audio: 'badbuny.mp3',
   ),
-  cancion(
+  electro(
     titulo: 'the Walters--I LOVE YOU SO ',
     imagen: "assets/youso.jpg",
     audio: 'yousoo.mp3',
   ),
-  cancion(
+  electro(
     titulo: 'KIDFLEX-Seguro Te Pierdo',
     imagen: "assets/seguro.jpg",
     audio: 'segur.mp3',
   ),
-  cancion(
+  electro(
     titulo: 'Bad Bunny - Aguacero  ',
     imagen: "assets/agua.jpg",
     audio: 'aguacero.mp3',

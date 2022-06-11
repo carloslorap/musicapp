@@ -1,8 +1,7 @@
-// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_app1/cancionesmodell.dart';
+
 import 'package:carlosmusic/principals.dart';
-// import 'package:flutter_app1/reproductor.dart';
+
 import 'package:carlosmusic/decorationlogin.dart';
 
 void main() => runApp(const MyApp());
@@ -29,26 +28,9 @@ class homepage extends StatefulWidget {
 
 // ignore: camel_case_types
 class _homepagepState extends State<homepage> {
-  // Future<FirebaseApp> _initializeFirebase() async {
-  //   FirebaseApp firebaseApp = await Firebase.initializeApp();
-  //   return firebaseApp;
-  // }
-
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: login()
-        // FutureBuilder(
-        //   future: _initializeFirebase(),
-        //   builder: (context, snapshot) {
-        //     if (snapshot.connectionState == ConnectionState.done) {
-        //       return login();
-        //     }
-        //     return const Center(
-        //       child: CircularProgressIndicator(),
-        //     );
-        //   },
-        // ),
-        );
+    return const Scaffold(body: login());
   }
 }
 
@@ -62,27 +44,6 @@ class login extends StatefulWidget {
 
 // ignore: camel_case_types
 class _loginState extends State<login> {
-  // static Future<User?> loginUsingEmailPassword(
-  //     {required String email,
-  //     required String password,
-  //     required BuildContext context}) async {
-  //   FirebaseAuth auth = FirebaseAuth.instance;
-  //   User? user;
-  //   try {
-  //     UserCredential userCredential = await auth.signInWithEmailAndPassword(
-  //         email: email, password: password);
-  //     user = userCredential.user;
-  //   } on FirebaseAuthException catch (e) {
-  //     if (e.code == "user not found") {
-  //       print("no user found for tha email");
-  //     }
-  //   }
-
-  //   return user;
-  // }
-
-  // TextEditingController _emailController = TextEditingController();
-  // TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final Size = MediaQuery.of(context).size;
@@ -98,8 +59,6 @@ class _loginState extends State<login> {
   }
 
   SingleChildScrollView loginform(BuildContext context) {
-    // TextEditingController _emailController = TextEditingController();
-    // TextEditingController _passwordController = TextEditingController();
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -181,16 +140,6 @@ class _loginState extends State<login> {
                             ),
                           ),
                           onPressed: () async {
-                            // User? user = await loginUsingEmailPassword(
-                            //     email: _emailController.text,
-                            //     password: _passwordController.text,
-                            //     context: context);
-                            // print(user);
-                            // if (user != null) {
-                            //   Navigator.of(context).pushReplacement(
-                            //       MaterialPageRoute(
-                            //           builder: (context) => principals()));
-                            // }
                             Navigator.push(
                               context,
                               MaterialPageRoute(

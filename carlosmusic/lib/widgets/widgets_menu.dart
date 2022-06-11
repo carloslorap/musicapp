@@ -7,6 +7,7 @@ class MenuLateral extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.white,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
@@ -14,8 +15,8 @@ class MenuLateral extends StatelessWidget {
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Colors.white,
                   Color.fromARGB(255, 162, 205, 240),
+                  Colors.white,
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -25,7 +26,7 @@ class MenuLateral extends StatelessWidget {
               children: [
                 Expanded(
                   child: Image.asset(
-                    "assets/fondo.png",
+                    "assets/usi.png",
                   ),
                 ),
                 const Text(
