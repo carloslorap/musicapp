@@ -9,19 +9,19 @@ import 'package:carlosmusic/generosmusica/listelectro.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-class ReproductorPage extends StatefulWidget {
+class ReproelecPage extends StatefulWidget {
   final List<electro> electross;
   final int index;
   final player = AudioCache();
 
-  ReproductorPage({Key? key, required this.electross, required this.index})
+  ReproelecPage({Key? key, required this.electross, required this.index})
       : super(key: key);
 
   @override
-  State<ReproductorPage> createState() => _ReproductorPageState();
+  State<ReproelecPage> createState() => _ReproelecPage();
 }
 
-class _ReproductorPageState extends State<ReproductorPage> {
+class _ReproelecPage extends State<ReproelecPage> {
   final audioPlayer = AudioPlayer();
   bool isplaying = false;
   Duration duration = Duration.zero;

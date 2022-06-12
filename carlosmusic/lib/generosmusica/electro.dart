@@ -58,7 +58,15 @@ class _electrosState extends State<electros> {
 
 Widget itemaudi(BuildContext context, electro electross, int index) {
   return InkWell(
-    onTap: () {},
+    onTap: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => ReproelecPage(
+                    electross: [electross],
+                    index: index - 1,
+                  )));
+    },
     child: Container(
       padding: EdgeInsets.symmetric(horizontal: 10),
       color: Colors.transparent,
