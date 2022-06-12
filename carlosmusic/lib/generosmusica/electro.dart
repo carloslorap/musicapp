@@ -29,28 +29,6 @@ class _electrosState extends State<electros> {
                     .toList(),
               ),
             ),
-            Container(
-              decoration: const BoxDecoration(color: Colors.white, boxShadow: [
-                BoxShadow(color: Color(0x55212121), blurRadius: 8.0),
-              ]),
-              child: Column(
-                children: [
-                  Slider.adaptive(
-                    value: 0.0,
-                    onChanged: (value) {},
-                  ),
-                  Row(
-                    children: [
-                      // Container(
-                      //   height: 90,
-                      //   width: 120,
-                      //   child: Image.asset(electross.image),
-                      // ),
-                    ],
-                  )
-                ],
-              ),
-            )
           ],
         ));
   }

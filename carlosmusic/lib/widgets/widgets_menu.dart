@@ -1,3 +1,5 @@
+import 'package:carlosmusic/generosmusica/cumbiaa/cumbia.dart';
+import 'package:carlosmusic/generosmusica/rockk/rock.dart';
 import 'package:flutter/material.dart';
 import 'package:carlosmusic/generosmusica/electro.dart';
 import 'package:carlosmusic/main.dart';
@@ -63,7 +65,10 @@ class MenuLateral extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.audiotrack),
             title: Text("Musica Rock"),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => rockk()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.audiotrack),
@@ -73,7 +78,10 @@ class MenuLateral extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.audiotrack),
             title: Text("Musica Cumbia"),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => cumbiaa()));
+            },
           )
         ],
       ),

@@ -12,48 +12,48 @@ class electro {
 
 List<electro> electross = [
   electro(
-    titul: 'MAGIG! - Rude(official video)',
+    titul: 'ACEJAX-BY MY SIDE',
     image: 'assets/1.jpeg',
     audi: '11.mp4',
   ),
   electro(
-    titul: 'Daddy Yankee - Con Calma )',
+    titul: 'DJVL--Xstep',
     image: "assets/2.jpeg",
     audi: '22.mp4',
   ),
   electro(
-    titul: 'Bruno Mars Thats What ILike ',
+    titul: 'TrapNaption--jeen ',
     image: "assets/3.jpeg",
     audi: '33.mp4',
   ),
   electro(
-    titul: "BoyWithUke'Toxic'Open Mic",
+    titul: "NCS-ashley apollodor",
     image: "assets/4.jpeg",
     audi: '44.mp4',
   ),
   electro(
-    titul: ' Ozuna - DEPRIMIDA ',
+    titul: 'TheFatRat-time lapse',
     image: "assets/5.jpeg",
     audi: '55.mp4',
   ),
   electro(
-    titul: 'BAD BUNNY - AMORFODA ',
+    titul: 'SUPERHERO',
     image: "assets/6.jpeg",
     audi: '66.mp4',
   ),
   electro(
-    titul: 'the Walters--I LOVE YOU SO ',
-    image: "assets/youso.jpg",
-    audi: 'yousoo.mp3',
+    titul: 'Alan Walker-the spectre',
+    image: "assets/7.jpg",
+    audi: '77.mp3',
   ),
   electro(
-    titul: 'KIDFLEX-Seguro Te Pierdo',
-    image: "assets/seguro.jpg",
-    audi: 'segur.mp3',
+    titul: 'Alan Walker-Faded',
+    image: "assets/8.jpg",
+    audi: '88.mp3',
   ),
   electro(
-    titul: 'Bad Bunny - Aguacero  ',
-    image: "assets/agua.jpg",
-    audi: 'aguacero.mp3',
+    titul: 'Marshmello-Alone',
+    image: "assets/9.jpg",
+    audi: '99.mp3',
   ),
 ];
