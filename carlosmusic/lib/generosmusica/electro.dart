@@ -2,7 +2,7 @@ import 'package:carlosmusic/generosmusica/listelectro.dart';
 import 'package:flutter/material.dart';
 import 'package:carlosmusic/widgets/widgets_menu.dart';
 import 'package:carlosmusic/principals.dart';
-import 'package:carlosmusic/generosmusica/listelectro.dart';
+import 'package:carlosmusic/generosmusica/reproelec.dart';
 
 class electros extends StatefulWidget {
   const electros({Key? key}) : super(key: key);
@@ -17,28 +17,61 @@ class _electrosState extends State<electros> {
     return Scaffold(
         appBar: AppBar(),
         drawer: MenuLateral(),
-        body: Expanded(
-          child: ListView(children: electros.asMap().map()),
+        body: Column(
+          children: [
+            Expanded(
+              child: ListView(
+                children: electross
+                    .asMap()
+                    .map((index, electro) =>
+                        MapEntry(index, itemaudi(context, electro, index + 1)))
+                    .values
+                    .toList(),
+              ),
+            ),
+            Container(
+              decoration: const BoxDecoration(color: Colors.white, boxShadow: [
+                BoxShadow(color: Color(0x55212121), blurRadius: 8.0),
+              ]),
+              child: Column(
+                children: [
+                  Slider.adaptive(
+                    value: 0.0,
+                    onChanged: (value) {},
+                  ),
+                  Row(
+                    children: [
+                      // Container(
+                      //   height: 90,
+                      //   width: 120,
+                      //   child: Image.asset(electross.image),
+                      // ),
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
         ));
   }
 }
 
-Widget itemaudio(BuildContext context, electro electros, int index) {
+Widget itemaudi(BuildContext context, electro electross, int index) {
   return InkWell(
     onTap: () {},
     child: Container(
       padding: EdgeInsets.symmetric(horizontal: 10),
       color: Colors.transparent,
-      height: 90,
+      height: 100,
       child: Row(children: <Widget>[
         Text(index.toString(), style: TextStyle(color: Colors.grey)),
         SizedBox(
           width: 20,
         ),
         Container(
-          height: 70,
-          width: 100,
-          child: Image.asset(electros.imagen),
+          height: 90,
+          width: 120,
+          child: Image.asset(electross.image),
         ),
         SizedBox(
           width: 20,
@@ -47,7 +80,7 @@ Widget itemaudio(BuildContext context, electro electros, int index) {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(electros.titulo),
+            Text(electross.titul),
           ],
         ),
       ]),
