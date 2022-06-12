@@ -15,7 +15,9 @@ class _electrosState extends State<electros> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: const Text("Musica Electro"),
+        ),
         drawer: MenuLateral(),
         body: Column(
           children: [

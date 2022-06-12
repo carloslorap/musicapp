@@ -15,7 +15,9 @@ class _rockk extends State<rockk> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: const Text("Musica Rock"),
+        ),
         drawer: MenuLateral(),
         body: Column(
           children: [
