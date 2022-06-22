@@ -107,9 +107,15 @@ class _ReproductorPageState extends State<ReproductorPage> {
               Container(
                 height: 55,
                 child: PageView(
-                  children: widget.canciones
-                      .map((canciones) => botones(canciones))
+                  children: canciones
+                      .asMap()
+                      .map((index, cancion) =>
+                          MapEntry(index, botones(context, cancion, index + 1)))
+                      .values
                       .toList(),
+                  // children: widget.canciones
+                  //     .map((canciones) => botones(canciones))
+                  //     .toList(),
                 ),
               ),
             ],
@@ -247,7 +253,7 @@ class _ReproductorPageState extends State<ReproductorPage> {
     );
   }
 
-  Widget botones(cancion canciones) {
+  Widget botones(BuildContext context, cancion canciones, int index) {
     return Container(
       height: 50,
       child: Row(

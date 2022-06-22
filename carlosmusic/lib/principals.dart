@@ -75,31 +75,33 @@ Widget itemaudio(BuildContext context, cancion canciones, int index) {
                     index: index - 1,
                   )));
     },
-    child: Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
-      color: Colors.transparent,
-      height: 90,
-      child: Row(children: <Widget>[
-        Text(index.toString(), style: TextStyle(color: Colors.grey)),
-        SizedBox(
-          width: 20,
-        ),
-        Container(
-          height: 70,
-          width: 100,
-          child: Image.asset(canciones.imagen),
-        ),
-        SizedBox(
-          width: 20,
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(canciones.titulo),
-          ],
-        ),
-      ]),
+    child: Expanded(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        color: Colors.transparent,
+        height: 90,
+        child: Row(children: <Widget>[
+          Text(index.toString(), style: TextStyle(color: Colors.grey)),
+          SizedBox(
+            width: 20,
+          ),
+          Container(
+            height: 70,
+            width: 100,
+            child: Image.asset(canciones.imagen),
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(canciones.titulo),
+            ],
+          ),
+        ]),
+      ),
     ),
   );
 }

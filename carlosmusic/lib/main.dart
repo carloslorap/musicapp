@@ -91,7 +91,6 @@ class _loginState extends State<login> {
                     child: Column(
                       children: [
                         TextFormField(
-                          //   controller: _emailController,
                           autocorrect: false,
                           decoration: InputDecorations.inputDecoration(
                               hintext: "ejemplo@gmail.com",
@@ -110,7 +109,6 @@ class _loginState extends State<login> {
                           height: 30,
                         ),
                         TextFormField(
-                          //    controller: _passwordController,
                           autocorrect: false,
                           obscureText: true,
                           decoration: InputDecorations.inputDecoration(
