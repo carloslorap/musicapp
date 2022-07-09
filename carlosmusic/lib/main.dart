@@ -1,3 +1,4 @@
+import 'package:carlosmusic/register.dart';
 import 'package:flutter/material.dart';
 
 import 'package:carlosmusic/principals.dart';
@@ -153,10 +154,29 @@ class _loginState extends State<login> {
             ),
           ),
           const SizedBox(height: 30),
-          const Text(
-            "Registrar Cuenta",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
+          MaterialButton(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            disabledColor: Colors.grey,
+            color: Colors.transparent,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+              child: const Text(
+                "Registrar Cunenta",
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+            onPressed: () async {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => register()),
+              );
+            },
+          )
+          // Text(
+          //   "Registrar Cuenta",
+          //   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          // ),
         ],
       ),
     );

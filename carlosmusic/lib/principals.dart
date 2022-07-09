@@ -82,7 +82,7 @@ Widget itemaudio(BuildContext context, cancion canciones, int index) {
         height: 90,
         child: Row(children: <Widget>[
           Text(index.toString(), style: TextStyle(color: Colors.grey)),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Container(
@@ -90,7 +90,7 @@ Widget itemaudio(BuildContext context, cancion canciones, int index) {
             width: 100,
             child: Image.asset(canciones.imagen),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Column(
